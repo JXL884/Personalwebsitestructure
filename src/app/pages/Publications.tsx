@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { BookOpen, ExternalLink, Users } from "lucide-react";
 import { Badge } from "../components/ui/badge";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { Button } from "../components/ui/button";
 
 export function Publications() {
   const publications = [
@@ -11,6 +12,7 @@ export function Publications() {
       authors:
         "Xianzhi Li, Ethan Callanan, Abdellah Ghassel, Xiaodan Zhu",
       venue: "EACL 2026",
+      link: "https://arxiv.org/pdf/2503.21961",
       description: [
         'Proposed Entropy-Gated Branching (EGB), a method to prune low-quality token-level uncertainty during generation and branches only at high-uncertainty "decision points," then prunes candidates using a lightweight verifier.',
         "Achieved 22.6% accuracy improvement over standard inference while operating 31%-75% faster than test-time beam search on math-heavy small-to-midsize benchmarks.",
@@ -38,6 +40,7 @@ export function Publications() {
       authors: "Abdellah Ghassel, Xianzhi Li, Xiaodan Zhu",
       venue:
         "IEEE Trans on Audio, Speech, and Language Processing 2025",
+      link: "https://arxiv.org/abs/2504.18839",
       description: [
         'Introduced a "Detect, Explain, Escalate" framework for managing dialogue breakdowns in LLM-powered agents with resource-efficient operation.',
         "Fine-tuned a compact 8B-parameter model as a real-time breakdown detector, achieving state-of-the-art on DBDC5 and strong results on BETOLD with 7% accuracy improvement; proposed monitor-escalate pipeline reducing inference costs by 34%.",
@@ -57,6 +60,7 @@ export function Publications() {
       authors:
         "Junqiao Wang, Zhaopeng Guan, Guangya Liu, Tianze Xia, Xianzhi Li, et al.",
       venue: "Preprint 2025",
+      link: "https://arxiv.org/pdf/2509.09751",
       description: [
         "Presented Meta-RL-Crypto, a meta-learning and transformer-based architecture combining meta-learning to create a self-improving trading agent for cryptocurrency markets.",
         "Designed a closed-loop system where the agent alternates between actor, judge, and meta-judge roles, leveraging multi-dimensional on-chain/off-chain and minimal human supervision.",
@@ -80,6 +84,7 @@ export function Publications() {
       authors:
         "Xianzhi Li, Ran Zmigrod, Xiaodan Zhu, Zhiqiang Ma, Xiaomo Liu",
       venue: "EMNLP 2024 Findings",
+      link: "https://arxiv.org/pdf/2410.02912",
       description: [
         "Proposed ANADP, the first differentially private fine-tuning method that distributes privacy budget non-uniformly based on Transformer parameter sensitivity.",
         "Demonstrated improvements over standard DP fine-tuning approaches on GLUE benchmark across multiple training paradigms; conducted comparative analysis showing ANADP offers robust protection.",
@@ -103,6 +108,7 @@ export function Publications() {
       authors:
         "Xianzhi Li, Samuel Chan, Xiaodan Zhu, Yulong Pei, etc.",
       venue: "EMNLP 2023 Industry Track",
+      link: "https://arxiv.org/abs/2305.05862",
       description: [
         "Among the first comprehensive studies of general-purpose LLMs (ChatGPT/GPT-4) on financial NLP tasks (initial preprint released 7 weeks after ChatGPT API went public).",
         "Evaluated performance on eight benchmark datasets across five task categories; reported strong performance vs. domain-specific baselines with detailed practical recommendations.",
@@ -116,6 +122,7 @@ export function Publications() {
       authors:
         "Yihao Fang, Xianzhi Li, Stephen W. Thomas, Xiaodan Zhu",
       venue: "IJCAI 2023 Workshop on Financial NLP",
+      link: "https://arxiv.org/abs/2308.13517",
       description: [
         "Explored ChatGPT as a data augmentation technique to enhance compositional generalization in open intent detection, addressing limitations of existing benchmarks.",
         "Demonstrated that incorporating ChatGPT-generated synthetic data into training effectively improves model performance, outperforming existing techniques on multiple benchmarks.",
@@ -139,6 +146,7 @@ export function Publications() {
       authors:
         "Xianzhi Li, Will Aitken, Xiaodan Zhu, Stephen W. Thomas",
       venue: "EMNLP 2022 Workshopon Financial NLP",
+      link: "https://arxiv.org/abs/2210.14304",
       description: [
         "Achieved state-of-the-art results by augmenting the ADB open intent classification architecture with prefix-tuning, improving accuracy on the Banking77 benchmark.",
         "Provided ablation studies testing the impact of reparameterization, prefix lengths, fine-tuning different layer groups, and various last-layer components.",
@@ -203,9 +211,26 @@ export function Publications() {
                 className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
               >
                 <div className="mb-4">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {pub.title}
-                  </h3>
+                  <div className="flex items-start justify-between gap-4 mb-2">
+                    <h3 className="text-xl font-semibold text-gray-900 flex-1">
+                      {pub.title}
+                    </h3>
+                    {pub.link && (
+                      <a
+                        href={pub.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button 
+                          size="sm" 
+                          className="bg-blue-600 hover:bg-blue-700 text-white flex-shrink-0"
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          View Paper
+                        </Button>
+                      </a>
+                    )}
+                  </div>
                   <div className="flex items-start text-sm text-gray-600 mb-2">
                     <Users className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" />
                     <p className="italic">{pub.authors}</p>
@@ -268,6 +293,18 @@ export function Publications() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white rounded-lg p-6 text-center">
+              <p className="text-3xl font-bold text-purple-600 mb-3">
+                Citations: 251
+              </p>
+              <p className="text-xl font-semibold text-gray-700 mb-1">
+                h-index: 5
+              </p>
+              <p className="text-xl font-semibold text-gray-700 mb-3">
+                i10-index: 5
+              </p>
+              <p className="text-sm text-gray-500">(Up to Feb 2026)</p>
+            </div>
+            <div className="bg-white rounded-lg p-6 text-center">
               <p className="text-4xl font-bold text-blue-600 mb-2">
                 7+
               </p>
@@ -280,12 +317,6 @@ export function Publications() {
               <p className="text-gray-700">
                 EACL, EMNLP, IJCAI, IEEE Trans
               </p>
-            </div>
-            <div className="bg-white rounded-lg p-6 text-center">
-              <p className="text-4xl font-bold text-purple-600 mb-2">
-                Multiple
-              </p>
-              <p className="text-gray-700">Research Areas</p>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ export function Publications() {
         "Entropy-Gated Branching for Efficient Test-Time Reasoning",
       authors:
         "Xianzhi Li, Ethan Callanan, Abdellah Ghassel, Xiaodan Zhu",
-      venue: "EACL 2026",
+      venue: "EACL 2026 Oral",
       link: "https://arxiv.org/pdf/2503.21961",
       description: [
         'Proposed Entropy-Gated Branching (EGB), a method to prune low-quality token-level uncertainty during generation and branches only at high-uncertainty "decision points," then prunes candidates using a lightweight verifier.',

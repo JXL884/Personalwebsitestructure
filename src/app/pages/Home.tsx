@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import { Button } from "../components/ui/button";
-import { ArrowRight, BookOpen, Briefcase, Code, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, Briefcase, Code, Sparkles, Mail, Linkedin, GraduationCap } from "lucide-react";
 
 export function Home() {
   return (
@@ -192,6 +192,72 @@ export function Home() {
               </Link>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Contact Information Section */}
+      <section className="py-16 bg-gradient-to-br from-slate-50 to-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Feel free to reach out for collaborations or just a friendly chat
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+          >
+            {/* Email */}
+            <a
+              href="mailto:li.xianzhi@queensu.ca"
+              className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center"
+            >
+              <div className="bg-blue-100 rounded-full p-4 mb-4 group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300">
+                <Mail className="h-6 w-6 text-blue-600 group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Email</h3>
+              <p className="text-sm text-gray-600 break-all">li.xianzhi@queensu.ca</p>
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://linkedin.com/in/xianzhi-li-72071923a"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center"
+            >
+              <div className="bg-blue-100 rounded-full p-4 mb-4 group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300">
+                <Linkedin className="h-6 w-6 text-blue-600 group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">LinkedIn</h3>
+              <p className="text-sm text-gray-600">xianzhi-li-72071923a</p>
+            </a>
+
+            {/* Google Scholar */}
+            <a
+              href="https://scholar.google.com/citations?user=F7B1QQsAAAAJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center"
+            >
+              <div className="bg-blue-100 rounded-full p-4 mb-4 group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300">
+                <GraduationCap className="h-6 w-6 text-blue-600 group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Google Scholar</h3>
+              <p className="text-sm text-gray-600">View Publications</p>
+            </a>
+          </motion.div>
         </div>
       </section>
     </div>

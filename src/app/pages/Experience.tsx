@@ -41,7 +41,7 @@ export function Experience() {
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-1">AI Research Intern</h3>
-                  <p className="text-lg text-blue-600 mb-2">Robot Development</p>
+                  <p className="text-lg text-blue-600 mb-2">Redbit Development</p>
                 </div>
                 <div className="flex flex-col items-start md:items-end space-y-1">
                   <div className="flex items-center text-sm text-gray-600">
@@ -76,7 +76,7 @@ export function Experience() {
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-1">Instructor</h3>
-                  <p className="text-lg text-blue-600 mb-2">WeChatData</p>
+                  <p className="text-lg text-blue-600 mb-2">WeCloudData</p>
                 </div>
                 <div className="flex flex-col items-start md:items-end space-y-1">
                   <div className="flex items-center text-sm text-gray-600">
